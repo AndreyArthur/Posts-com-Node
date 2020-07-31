@@ -1,0 +1,25 @@
+{
+  "name": "posts-com-node",
+  "version": "1.0.0",
+  "description": "Minha primeira aplicação em NodeJS, é um sistema de posts, onde os inputs do formulário vão para uma página com todos os outros inputs e também conta com um sistema de deleção para cada input.",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "sequelize": "^6.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreyArthur/Posts-com-Node.git"
+  },
+  "author": "Andrey Arthur",
+  "bugs": {
+    "url": "https://github.com/AndreyArthur/Posts-com-Node/issues"
+  },
+  "homepage": "https://github.com/AndreyArthur/Posts-com-Node#readme"
+}
