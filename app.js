@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
-const handlebars = require('express-handlebars');
+const {engine} = require('express-handlebars');
 const bodyParser = require('body-parser');
+const {setup} = require('./models/db');
 const Post = require('./models/Post');
 
 // Config
 
   // Template Engine
-    app.engine('handlebars', handlebars({defaultLayout: 'main'}));
+    app.engine('handlebars', engine({defaultLayout: 'main'}));
     app.set('view engine', 'handlebars');
 
   // Body Parser
@@ -48,6 +49,6 @@ const Post = require('./models/Post');
   })
 
 const serverLocation = 3000;
-app.listen(serverLocation, function() {
-  console.log(`Me deixa aqui por útimo, ah! E aliás, teu server tá rodando cara, tá em http://localhost:${serverLocation}.`)
+app.listen(serverLocation, async function() {
+  await setup();
 });
