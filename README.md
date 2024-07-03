@@ -5,7 +5,7 @@ This was my first nodejs application, my purpose was to learn how to handle url 
 ## Mistakes I've committed:
 
 Do not ignore `node_modules`.
-Do not save dependencies (there was no `package.json`!). 
+Do not save dependencies (there was no `package.json`!).
 Save passwords in the database connection file (they were local at least).
 Do not have a setup or migrations for database.
 Code in portuguese, instead of all english.
@@ -18,8 +18,8 @@ Using raw promises instead of async/await.
 - [x] Save dependencies in `package.json`.
 - [x] Use `.env` to handle sensitive info.
 - [x] Configure containers to run the project with `docker-compose.yaml`.
-- [ ] Lint and format code.
-- [ ] Delete comments.
+- [x] Lint and format code.
+- [x] Delete comments.
 - [ ] Use async/await.
 
 ## Run the project (Node 20+ is required).
