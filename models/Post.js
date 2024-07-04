@@ -1,4 +1,4 @@
-const db = require('./db');
+import * as db from './db.js';
 
 const Post = db.sequelize.define('posts', {
     title: {
@@ -9,4 +9,4 @@ const Post = db.sequelize.define('posts', {
     },
 });
 
-module.exports = Post;
+export default Post;

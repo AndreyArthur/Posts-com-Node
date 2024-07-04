@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize');
+import Sequelize from 'sequelize';
 
 const database = process.env.DATABASE_NAME;
 const user = process.env.DATABASE_USER;
@@ -25,8 +25,8 @@ async function setup() {
     `);
 }
 
-module.exports = {
-    Sequelize: Sequelize,
-    sequelize: sequelize,
-    setup: setup,
+export {
+    Sequelize,
+    sequelize,
+    setup,
 };

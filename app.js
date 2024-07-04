@@ -1,9 +1,10 @@
-const express = require('express');
+import express from 'express';
+import {engine} from 'express-handlebars';
+import bodyParser from 'body-parser';
+import {setup} from './models/db.js';
+import Post from './models/Post.js';
+
 const app = express();
-const {engine} = require('express-handlebars');
-const bodyParser = require('body-parser');
-const {setup} = require('./models/db');
-const Post = require('./models/Post');
 
 app.engine('handlebars', engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
