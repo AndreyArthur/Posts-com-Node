@@ -1,6 +1,6 @@
 import * as db from './db.js';
 
-const Post = db.sequelize.define('posts', {
+const PostModel = db.sequelize.define('posts', {
     title: {
         type: db.Sequelize.STRING,
     },
@@ -9,4 +9,4 @@ const Post = db.sequelize.define('posts', {
     },
 });
 
-export default Post;
+export default PostModel;
