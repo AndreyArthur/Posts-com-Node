@@ -25,8 +25,8 @@ app.get('/cad', function(req, res) {
 
 app.post('/add', function(req, res) {
     Post.create({
-        titulo: req.body.titulo,
-        conteudo: req.body.conteudo,
+        title: req.body.title,
+        content: req.body.content,
     }).then( function() {
         res.redirect('/');
     }).catch( function(erro) {

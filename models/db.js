@@ -15,10 +15,10 @@ const sequelize = new Sequelize(database, user, password, {
 
 async function setup() {
     await sequelize.query(`
-        CREATE TABLE IF NOT EXISTS postagens (
+        CREATE TABLE IF NOT EXISTS posts (
             id INT AUTO_INCREMENT PRIMARY KEY,
-            titulo VARCHAR(255),
-            conteudo VARCHAR(255),
+            title VARCHAR(255),
+            content VARCHAR(255),
             createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
         );
