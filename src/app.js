@@ -23,17 +23,29 @@ app.get('/', async function(_, res) {
     });
 });
 
-app.get('/create-post', function(_, res) {
-    res.render('form');
+app.get('/create-post', function(req, res) {
+    res.render('form',{
+        title: req.query.title || '',
+        content: req.query.content || '',
+        error: req.query.error,
+    });
 });
 
 app.post('/create-post', async function(req, res) {
     try {
         await PostService.create(req.body.title, req.body.content);
-        res.redirect('/');
-    } catch (err) {
-        res.send('Houve um erro: ' + err);
+    } catch (error) {
+        res.redirect(`/create-post?error=${
+            error.message
+        }&title=${
+            req.body.title
+        }&content=${
+            req.body.content
+        }`);
+        return;
     }
+
+    res.redirect('/');
 });
 
 app.get('/delete-post/:id', async function(req, res) {

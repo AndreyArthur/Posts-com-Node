@@ -1,11 +1,11 @@
-<h1>Lista de Posts</h1>
+<h1>Recent posts:</h1>
 
 {{#each posts}}
-  <h2>{{dataValues.title}}</h2>
-  <p>{{dataValues.content}}</p>
-  <p>Data de Criação : {{dataValues.createdAt}}</p>
-  <a href="/delete-post/{{dataValues.id}}"><button>Deletar</button></a>
-  <hr>
+    <h2>{{title}}</h2>
+    <p>{{content}}</p>
+    <p>Created at: {{createdAt}}</p>
+    <a href="/delete-post/{{id}}"><button>Delete</button></a>
+    <hr>
 {{/each}}
 
-<a href="/create-post">Fazer um post</a>
+<a href="/create-post">Create a post</a>

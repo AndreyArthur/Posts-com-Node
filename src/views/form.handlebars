@@ -1,7 +1,12 @@
 <form action="/create-post" method="POST">
-  <p>Título</p>
-  <input type="text" name="title"/>
-  <p>Conteúdo</p>
-  <textarea name="content"></textarea>
-  <button style="display: block;" type="submit">Cadastrar postagem</button>
+    <p>Title</p>
+    <input type="text" name="title" value="{{title}}"/>
+    <p>Content</p>
+    <textarea name="content">{{content}}</textarea>
+
+    {{#if error}}
+        <p style="color: red;">{{error}}</p>
+    {{/if}}
+
+    <button style="display: block;" type="submit">Submit</button>
 </form>
