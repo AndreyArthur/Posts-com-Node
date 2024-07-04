@@ -20,11 +20,11 @@ app.get('/', async function(_, res) {
     });
 });
 
-app.get('/cad', function(_, res) {
-    res.render('formulario');
+app.get('/create-post', function(_, res) {
+    res.render('form');
 });
 
-app.post('/add', async function(req, res) {
+app.post('/create-post', async function(req, res) {
     try {
         await PostService.create(req.body.title, req.body.content);
         res.redirect('/');
@@ -33,7 +33,7 @@ app.post('/add', async function(req, res) {
     }
 });
 
-app.get('/deletar/:id', async function(req, res) {
+app.get('/delete-post/:id', async function(req, res) {
     try {
         await PostService.delete(req.params.id);
         res.redirect('/');
