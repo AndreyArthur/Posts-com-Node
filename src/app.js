@@ -1,13 +1,16 @@
+import path from 'path';
 import express from 'express';
 import {engine} from 'express-handlebars';
 import bodyParser from 'body-parser';
 import {setup} from './models/db.js';
-import PostModel from './models/post.js';
 import PostService from './services/post.js';
 
 const app = express();
 
-app.engine('handlebars', engine({defaultLayout: 'main'}));
+app.set('views', path.resolve(import.meta.dirname, 'views'));
+app.engine('handlebars', engine({
+    defaultLayout: 'main',
+}));
 app.set('view engine', 'handlebars');
 
 app.use(bodyParser.urlencoded({extended: false}));
